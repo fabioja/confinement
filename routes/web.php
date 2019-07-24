@@ -11,6 +11,14 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', ['uses' => 'Controller@homepage']);
+
+
+/**
+ * Routes to users auth
+ * =====================================================================================================================
+ */
+
+Route::get('/login', ['uses' => 'Controller@fazerLogin']);
+
+Route::post('/login', ['as'=> 'user.login', 'uses' => 'Controller@login']);

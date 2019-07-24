@@ -10,4 +10,16 @@ use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 class Controller extends BaseController
 {
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
+
+    public function homepage(){
+        $variavel = "Home page do sistema";
+        return view('welcome', ['title' => $variavel]);
+    }
+
+    /**
+     *  method the user login VIEW
+     */
+    public function fazerLogin(){
+        return view('user.login');
+    }
 }
